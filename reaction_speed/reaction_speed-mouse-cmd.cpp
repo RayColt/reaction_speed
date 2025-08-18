@@ -2,8 +2,8 @@
 #include <chrono>
 #include <thread>
 #include <iostream>
-#include <cstdlib>   // for srand, rand
-#include <ctime>     // for time(nullptr)
+#include <cstdlib>  // for srand, rand
+#include <ctime>    // for time(nullptr)
 
 using namespace std;
 
