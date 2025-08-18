@@ -18,11 +18,14 @@ int main()
     this_thread::sleep_for(chrono::milliseconds(delay_ms));
     chrono::steady_clock::time_point start = chrono::steady_clock::now();
     cout << "O" << flush;
-    //while (_getch() != ' ') {}
-    while (true)
-    {
-        if (GetAsyncKeyState(VK_LBUTTON) & 0x8000) { break; }
-    }
+    while (_getch() != ' ') {}
+    /*
+        TODO: with MOUSE CLICK :: AI?
+        while (true)
+        {
+            if (GetAsyncKeyState(VK_LBUTTON) & 0x8000) { break; }
+	    }
+    */
 
 
     cout << endl;
