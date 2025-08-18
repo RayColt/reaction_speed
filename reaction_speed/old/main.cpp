@@ -26,10 +26,7 @@ int main()
             if (GetAsyncKeyState(VK_LBUTTON) & 0x8000) { break; }
 	    }
     */
-
-
     cout << endl;
-
     chrono::steady_clock::time_point end = chrono::steady_clock::now();
     chrono::duration<double> elapsed_ms_seconds = end - start;
     cout << "\nYour reaction time: " << elapsed_ms_seconds.count() * 1000 << " ms\n";
