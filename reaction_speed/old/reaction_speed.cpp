@@ -1,3 +1,6 @@
+/* uncommented
+ * reaction_speed.cpp
+ *
 #include <chrono>
 #include <thread>
 #include <iostream>
@@ -19,13 +22,6 @@ int main()
     chrono::steady_clock::time_point start = chrono::steady_clock::now();
     cout << "O" << flush;
     while (_getch() != ' ') {}
-    /*
-        TODO: with MOUSE CLICK :: AI?
-        while (true)
-        {
-            if (GetAsyncKeyState(VK_LBUTTON) & 0x8000) { break; }
-	    }
-    */
     cout << endl;
     chrono::steady_clock::time_point end = chrono::steady_clock::now();
     chrono::duration<double> elapsed_ms_seconds = end - start;
@@ -33,4 +29,4 @@ int main()
     cout << "\nYour S Indication: S" << elapsed_ms_seconds.count() * 10 << "\n";
 
     return 0;
-}
+}*/

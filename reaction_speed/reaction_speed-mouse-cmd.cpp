@@ -22,17 +22,11 @@ int main()
     // Seed RNG and disable console Quick Edit
     srand(static_cast<unsigned>(time(nullptr)));
     disableQuickEdit();
-
-    cout << "Get Ready! Wait for the O, then click the LEFT mouse button as fast as you can.\n";
-
-    // Short pause before countdown
+    cout << "Get Ready! Wait for the O, then click \nthe LEFT mouse button as fast as you can.\n";
     this_thread::sleep_for(chrono::seconds(1));
-
     cout << "WAIT FOR THE 'O':" << flush;
     int delay_ms = 2000 + (rand() % 3001);
     this_thread::sleep_for(chrono::milliseconds(delay_ms));
-
-    // Show target and start timer
     chrono::steady_clock::time_point start = chrono::steady_clock::now();
     cout << "O" << flush;
 
@@ -43,15 +37,13 @@ int main()
         {
             break;
         }
-        // avoid pegging CPU at 100%
+        // Avoid CPU at 100%
         this_thread::sleep_for(chrono::milliseconds(5));
     }
 
-    // Compute and display reaction time
     chrono::steady_clock::time_point end = chrono::steady_clock::now();
     chrono::duration<double> elapsed = end - start;
     double ms = elapsed.count() * 1000;
-
     cout << "\n\nYour reaction time: " << ms << " ms\n";
     cout << "Your S Indication: S" << (elapsed.count() * 10) << "\n";
 

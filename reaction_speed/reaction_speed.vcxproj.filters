@@ -18,7 +18,10 @@
     <ClCompile Include="reaction_speed-mouse-cmd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="old\main.cpp">
+    <ClCompile Include="old\reaction_speed.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="old\reaction_speed_linux.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
