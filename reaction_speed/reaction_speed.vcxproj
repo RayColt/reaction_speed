@@ -126,6 +126,7 @@
   <ItemGroup>
     <ClCompile Include="old\reaction_speed.cpp" />
     <ClCompile Include="old\reaction_speed_linux.cpp" />
+    <ClCompile Include="old\reaction_speed_spinner.cpp" />
     <ClCompile Include="reaction_speed-mouse-cmd.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

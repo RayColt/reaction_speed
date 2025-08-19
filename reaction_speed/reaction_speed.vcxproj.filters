@@ -24,5 +24,8 @@
     <ClCompile Include="old\reaction_speed_linux.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="old\reaction_speed_spinner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
