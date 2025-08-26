@@ -27,7 +27,7 @@ int main()
     cout << "WAIT FOR THE 'O':" << flush;
     int delay_ms = 2000 + (rand() % 3001);
     this_thread::sleep_for(chrono::milliseconds(delay_ms));
-    chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
+    chrono::steady_clock::time_point start = chrono::steady_clock::now();
     cout << "O" << flush;
 
     // Poll for left-button down
@@ -41,7 +41,7 @@ int main()
         this_thread::sleep_for(chrono::milliseconds(5));
     }
 
-    chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
+    chrono::steady_clock::time_point end = chrono::steady_clock::now();
     chrono::duration<double> elapsed = end - start;
     double ms = elapsed.count() * 1000;
     cout << "\n\nYour reaction time: " << ms << " ms\n";
