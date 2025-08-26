@@ -47,5 +47,8 @@ int main()
     cout << "\n\nYour reaction time: " << ms << " ms\n";
     cout << "Your S Indication: S" << (elapsed.count() * 10) << "\n";
 
+    cout << "\nPress Enter to close program . . .";
+    int c = getchar();
+
     return 0;
 }
