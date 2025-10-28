@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reaction Speed Test</title>
+  <style>
+    #reaction-box {
+      width: 300px;
+      height: 200px;
+      font-size: 24px;
+      text-align: center;
+      line-height: 200px;
+      background-color: green;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+    }
+    #result {
+      color: red;
+	  font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="reaction-box">Click to start!</div>
+  <p id="result"></p>
+
+  <script>
+    let startTime;
+    let waitingForReaction = false;
+    let timeout;
+    const box = document.getElementById("reaction-box");
+    const result = document.getElementById("result");
+
+    // When the red state is triggered, record the start time and update the UI.
+    function triggerRed() {
+      startTime = Date.now();
+      waitingForReaction = true;
+      box.style.backgroundColor = "red";
+      box.textContent = "Click now!";
+    }
+
+    // Click event manages both starting a round and capturing the reaction.
+    box.addEventListener("click", () => {
+      if (!waitingForReaction) {
+        // Start a new round by clearing previous results and waiting.
+        result.textContent = "";
+        box.style.backgroundColor = "green";
+        box.textContent = "Wait...";
+        // Set a random delay (between 2-5 seconds) for the color change.
+        const randomDelay = Math.floor(Math.random() * 3000) + 2000;
+        timeout = setTimeout(triggerRed, randomDelay);
+      } else {
+        // The user clicked when the box is red.
+        const reactionTime = Date.now() - startTime;
+        result.textContent = `Your reaction time: ${reactionTime} ms, you have got a S` + reactionTime/100 + ` US Army indication.`;
+        waitingForReaction = false;
+        box.style.backgroundColor = "green";
+        box.textContent = "Click to try again!";
+        clearTimeout(timeout); // In case the user clicks before timeout finishes.
+      }
+    });
+  </script>
+</body>
+</html>
