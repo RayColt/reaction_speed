@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Reaction Speed Test for IE 4 and Netscape</title>
+<script language="javascript1.2">
+	var startTime = 0;
+	var timeoutID = null;
+    
+	function startTest() {
+		var textObject = document.all["txtArea"];
+		startTime = 0;
+		if (timeoutID) {
+			clearTimeout(timeoutID);
+		}
+		textObject.value = 'Get ready...';
+		textObject.style.backgroundColor = '#33cc00';
+		var delay = Math.random() * 2000 + 1000; // 1–3 seconds
+		timeoutID = setTimeout(alertUser, delay);
+	}
+	
+    function alertUser() {
+		var textObject = document.all["txtArea"];	
+		textObject.value = 'CLICK!';
+		textObject.style.backgroundColor = '#ff0000';  
+		startTime = (new Date()).getTime();
+    }
+
+    function timeReaction() {
+		var textObject = document.all["txtArea"];
+		var endTime = (new Date()).getTime();
+		var reaction = endTime - startTime;
+		var msg = document.getElementById('box');
+		textObject.style.backgroundColor = '';
+		var str = 'Your reaction: ' + reaction + ' ms';
+		textObject.value = str;
+		str =  str + '\n\rYour US Army S Indication: S' + reaction/100 +'\n\rClick to retry';
+		textObject.value = str;
+      	startTime = 0;
+	}
+	
+	function run() {
+		if (startTime === 0) {
+			startTest(); 
+		} 
+		else { 
+			timeReaction();
+		}  
+	}
+</script>
+</head>
+
+<body>
+<table width="200" border="0">
+  <tr>
+    <td align="center"><textarea name="txtArea" cols="33" rows="10">Reaction Speed Test</textarea></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center"><input name="btbSubmit" type="button" value="--- CLICK ---" onClick="run()"></td>
+  </tr>
+</table>
+</body>
+</html>
