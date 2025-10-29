@@ -19,7 +19,7 @@ void disableQuickEdit()
 
 int main()
 {
-    // Seed RNG and disable console Quick Edit
+    // Seed RNG and disable console Quick Edit 
     srand(static_cast<unsigned>(time(nullptr)));
     disableQuickEdit();
     cout << "Get Ready! Wait for the O, then click \nthe LEFT mouse button as fast as you can.\n";
